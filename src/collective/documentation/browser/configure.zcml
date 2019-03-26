@@ -18,4 +18,12 @@
       directory="static"
       />
 
+  <browser:page
+    name="documentation"
+    for="plone.dexterity.interfaces.IDexterityContainer"
+    permission="zope2.View"
+    class=".documentation.DocumentationView"
+    template="templates/documentation.pt"
+    />
+
 </configure>
