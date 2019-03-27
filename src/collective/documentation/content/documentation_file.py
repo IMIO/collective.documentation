@@ -10,6 +10,11 @@ from collective.documentation import _
 
 class IDocumentationFile(model.Schema):
     """IDocumentationFile"""
+    source_title = schema.TextLine(
+        title=_(u"Source title"),
+        required=False,
+    )
+
     source = schema.URI(
         title=_(u"Source"),
         required=False,
