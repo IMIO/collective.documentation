@@ -4,5 +4,5 @@
   <object name="documentation_category" meta_type="Dexterity FTI"/>
   <object name="documentation_section" meta_type="Dexterity FTI"/>
   <object name="documentation_file" meta_type="Dexterity FTI"/>
- <!-- -*- extra stuff goes here -*- -->
+  <object name="Folder" meta_type="Dexterity FTI"/>
 </object>
