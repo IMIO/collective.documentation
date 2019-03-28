@@ -42,7 +42,7 @@
   display: flex;
   flex-wrap: wrap;
   align-items: stretch;
-  justify-content: space-between;
+  justify-content: start;
 }
 #collective-documentation .documentation-category-sections .documentation-section .section-number-files {
   margin-left: auto;
@@ -52,6 +52,13 @@
   background-color: #efefef;
   margin: 1rem 0;
   padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  margin-left: calc(4% / 3);
+}
+#collective-documentation .documentation-category-sections .documentation-section .documentation-file:nth-child(4n+1) {
+  margin-left: 0;
 }
 #collective-documentation .documentation-category-sections .documentation-section .documentation-file-title {
   color: #000;
@@ -62,6 +69,8 @@
 }
 #collective-documentation .documentation-category-sections .documentation-section .documentation-file-description {
   font-size: 1.2rem;
+  margin-bottom: auto;
+  padding-bottom: 2rem;
 }
 #collective-documentation .documentation-category-sections .documentation-section .documentation-file-source,
 #collective-documentation .documentation-category-sections .documentation-section .documentation-file-size,
@@ -83,12 +92,26 @@
 }
 @media (max-width: 1200px) {
   #collective-documentation .documentation-category-sections .documentation-section .documentation-file {
-    width: 29%;
+    width: calc(100% / 3 - 1%);
+    margin-left: 1.4%;
+  }
+  #collective-documentation .documentation-category-sections .documentation-section .documentation-file:nth-child(4n+1) {
+    margin-left: 1.4%;
+  }
+  #collective-documentation .documentation-category-sections .documentation-section .documentation-file:nth-child(3n+1) {
+    margin-left: 0;
   }
 }
 @media (max-width: 768px) {
+  #collective-documentation .documentation-category-sections .documentation-section .documentation-files {
+    justify-content: space-between;
+  }
   #collective-documentation .documentation-category-sections .documentation-section .documentation-file {
     width: 49%;
+    margin-left: 0 !important;
+  }
+  #collective-documentation .documentation-category-sections .documentation-section .documentation-file:nth-child(2n+2) {
+    margin-left: auto !important;
   }
 }
 @media (max-width: 498px) {

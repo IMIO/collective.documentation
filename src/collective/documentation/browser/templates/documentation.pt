@@ -15,8 +15,8 @@
         </div>
         <div class="documentation-category-sections">
           <div class="documentation-section" tal:repeat="section python:view.get_sections(category)">
-            <input class="documentation-checkbox" tal:attributes="id string:checkbox-${repeat/section/index}" type="checkbox" name="checkbox" value="value">
-            <label class="documentation-label" alt="display files in section" tal:attributes="for string:checkbox-${repeat/section/index}">
+            <input class="documentation-checkbox" tal:attributes="id string:checkbox-${repeat/category/index}-${repeat/section/index}" type="checkbox" name="checkbox" value="value">
+            <label class="documentation-label" alt="display files in section" tal:attributes="for string:checkbox-${repeat/category/index}-${repeat/section/index}">
               <span class="section-title" tal:content="section/Title">title_section</span>
               <span class="section-number-files">
                 <tal:number tal:content="python: view.get_number_file(section)" />
@@ -42,24 +42,26 @@
                    tal:attributes="href download_url" >file_title</a>
                 <p class="documentation-file-description"
                    tal:content="file_description">file_description</p>
-                <span class="documentation-file-source" i18n:translate="">Source: </span>
-                <a href=""
-                   class="documentation-file-source"
-                   tal:condition="file_source_title"
-                   tal:content="file_source_title"
-                   tal:attributes="href file_source">link_source</a>
+                <div>
+                  <span class="documentation-file-source" i18n:translate="">Source: </span>
+                  <a href=""
+                     class="documentation-file-source"
+                     tal:condition="file_source_title"
+                     tal:content="file_source_title"
+                     tal:attributes="href file_source">link_source</a>
 
-                <a href=""
-                   class="documentation-file-source"
-                   tal:condition="not: file_source_title"
-                   tal:content="file_source"
-                   tal:attributes="href file_source">link_source</a>
-                <p class="documentation-file-size"
-                   tal:content="file_size"
-                   tal:condition="file_size">file_size</p>
-                <p class="documentation-file-creation"
-                   tal:content="date_format"
-                   tal:condition="date_format">file_creation</p>
+                  <a href=""
+                     class="documentation-file-source"
+                     tal:condition="not: file_source_title"
+                     tal:content="file_source"
+                     tal:attributes="href file_source">link_source</a>
+                  <p class="documentation-file-size"
+                     tal:content="file_size"
+                     tal:condition="file_size">file_size</p>
+                  <p class="documentation-file-creation"
+                     tal:content="date_format"
+                     tal:condition="date_format">file_creation</p>
+                </div>
                 <a href=""
                    class="documentation-file-download"
                    i18n:translate=""
