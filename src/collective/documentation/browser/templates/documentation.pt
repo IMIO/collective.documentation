@@ -1,66 +1,77 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
-    xmlns:tal="http://xml.zope.org/namespaces/tal"
-    xmlns:metal="http://xml.zope.org/namespaces/metal"
-    xmlns:i18n="http://xml.zope.org/namespaces/i18n"
-    lang="en"
-    metal:use-macro="context/main_template/macros/master"
-    i18n:domain="collective.documentation">
-<body>
-<metal:content-core fill-slot="content-core">
-  <div tal:repeat="category view/get_categories">
-    <span class="number_category" tal:content="repeat/category/number">number_category</span>
-    <span class="title_category" tal:content="category/Title">title_category</span>
-    <div tal:repeat="section python:view.get_sections(category)">
-      <span class="title_section" tal:content="section/Title">title_section</span>
-      <span class="number_file" tal:content="python: view.get_number_file(section)">number_file</span>
-      <span class="number_file" i18n:translate="">documents</span>
-      <div tal:repeat="file python:view.get_files(section)">
-        <div class="block_file"
-             tal:define="file_url file/absolute_url;
-                         download_url string:${file/absolute_url}/@@download/file/${file/file/filename};
-                         file_title file/Title;
-                         file_source_title file/source_title;
-                         file_source file/source;
-                         file_size python: view.human_readable_size(file);
-                         file_description file/Description;
-                         file_has_image python:file.image;
-                         file_creation file/CreationDate;
-                         date_format python: context.restrictedTraverse('@@plone').toLocalizedTime(file_creation);">
-          <img tal:condition="file_has_image"
-               style="width:80px; height:80px;"
-               tal:attributes="src  string:${file_url}/@@images/image">
-           <a href=""
-              class="file_title"
-              tal:content="file_title"
-              tal:attributes="href download_url" >file_title</a>
-          <p class="file_description"
-             tal:content="file_description">file_description</p>
-          <span class="title_source" i18n:translate="">Source: </span>
-          <a href=""
-             class="link_source"
-             tal:condition="file_source_title"
-             tal:content="file_source_title"
-             tal:attributes="href file_source">link_source</a>
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+      metal:use-macro="context/main_template/macros/master"
+      i18n:domain="collective.documentation">
+  <body>
+    <metal:content-core fill-slot="content-core">
+    <div id="collective-documentation">
+      <div class="documentation-category" tal:repeat="category view/get_categories">
+        <div class="documentation-category-header">
+          <span class="category-number" tal:content="repeat/category/number">number_category</span>
+          <span class="category-title" tal:content="category/Title">title_category</span>
+        </div>
+        <div class="documentation-category-sections">
+          <div class="documentation-section" tal:repeat="section python:view.get_sections(category)">
+            <input class="documentation-checkbox" tal:attributes="id string:checkbox-${repeat/section/index}" type="checkbox" name="checkbox" value="value">
+            <label class="documentation-label" alt="display files in section" tal:attributes="for string:checkbox-${repeat/section/index}">
+              <span class="section-title" tal:content="section/Title">title_section</span>
+              <span class="section-number-files">
+                <tal:number tal:content="python: view.get_number_file(section)" />
+                <span tal:omit-tag="" i18n:translate="">documents</span>
+            </label>
+            <div class="documentation-files">
+              <tal:blockfile tal:repeat="file python:view.get_files(section)">
+              <div class="documentation-file"
+                   tal:define="file_url file/absolute_url;
+                   download_url string:${file/absolute_url}/@@download/file/${file/file/filename};
+                   file_title file/Title;
+                   file_source_title file/source_title;
+                   file_source file/source;
+                   file_size python: view.human_readable_size(file);
+                   file_description file/Description;
+                   file_has_image python:file.image;
+                   file_creation file/CreationDate;
+                   date_format python: context.restrictedTraverse('@@plone').toLocalizedTime(file_creation);">
+                <img tal:condition="file_has_image" tal:attributes="src  string:${file_url}/@@images/image">
+                <a href=""
+                   class="documentation-file-title"
+                   tal:content="file_title"
+                   tal:attributes="href download_url" >file_title</a>
+                <p class="documentation-file-description"
+                   tal:content="file_description">file_description</p>
+                <span class="documentation-file-source" i18n:translate="">Source: </span>
+                <a href=""
+                   class="documentation-file-source"
+                   tal:condition="file_source_title"
+                   tal:content="file_source_title"
+                   tal:attributes="href file_source">link_source</a>
 
-          <a href=""
-             class="link_source"
-             tal:condition="not: file_source_title"
-             tal:content="file_source"
-             tal:attributes="href file_source">link_source</a>
-          <p class="file_size"
-             tal:content="file_size">file_size</p>
-          <p class="file_creation"
-             tal:content="date_format">file_creation</p>
-          <a href=""
-              class="download_button"
-              i18n:translate=""
-              tal:attributes="href download_url" >download</a>
+                <a href=""
+                   class="documentation-file-source"
+                   tal:condition="not: file_source_title"
+                   tal:content="file_source"
+                   tal:attributes="href file_source">link_source</a>
+                <p class="documentation-file-size"
+                   tal:content="file_size"
+                   tal:condition="file_size">file_size</p>
+                <p class="documentation-file-creation"
+                   tal:content="date_format"
+                   tal:condition="date_format">file_creation</p>
+                <a href=""
+                   class="documentation-file-download"
+                   i18n:translate=""
+                   tal:attributes="href download_url" >download</a>
 
+              </div>
+              </tal:blockfile>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</metal:content-core>
-
-</body>
+    </metal:content-core>
+  </body>
 </html>

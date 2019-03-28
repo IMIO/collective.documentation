@@ -1,5 +1,21 @@
 <?xml version="1.0"?>
 <registry>
-<!-- -*- extra stuff goes here -*- -->
+
+    <records prefix="plone.resources/collective.documentation"
+        interface='Products.CMFPlone.interfaces.IResourceRegistry'>
+        <value key="css">
+            <element>++plone++collective.documentation/less/style.less</element>
+        </value>
+    </records>
+    <records prefix="plone.bundles/collective.documentation"
+        interface='Products.CMFPlone.interfaces.IBundleRegistry'>
+        <value key="resources">
+            <element>collective.documentation</element>
+        </value>
+        <value key="enabled">True</value>
+        <value key="compile">True</value>
+        <value key="csscompilation">++plone++collective.documentation/css/style.css</value>
+        <value key="last_compilation"></value>
+    </records>
 
 </registry>

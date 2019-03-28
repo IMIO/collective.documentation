@@ -1,0 +1,98 @@
+#collective-documentation .documentation-category-header {
+  background-color: #007bb1;
+  color: #fff;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+#collective-documentation .documentation-category-header span {
+  padding: 0.5rem 1rem;
+  display: inline-block;
+}
+#collective-documentation .documentation-category-header .category-number {
+  background-color: #5e5e5e;
+}
+#collective-documentation .documentation-category-sections .documentation-section:last-child {
+  margin-bottom: 1rem;
+}
+#collective-documentation .documentation-category-sections .documentation-section .documentation-checkbox {
+  display: none;
+}
+#collective-documentation .documentation-category-sections .documentation-section .documentation-checkbox + .documentation-label {
+  background-color: #efefef;
+  display: flex;
+  width: 100%;
+  padding: 0.5rem 1rem;
+  margin-top: 1rem;
+  max-width: none;
+  justify-content: space-between;
+}
+#collective-documentation .documentation-category-sections .documentation-section .documentation-checkbox + .documentation-label::after {
+  padding-left: 0.5rem;
+}
+#collective-documentation .documentation-category-sections .documentation-section .documentation-checkbox:not(:checked) + .documentation-label::after {
+  content: "+";
+}
+#collective-documentation .documentation-category-sections .documentation-section .documentation-checkbox:not(:checked) + .documentation-label + .documentation-files {
+  display: none;
+}
+#collective-documentation .documentation-category-sections .documentation-section .documentation-checkbox:checked + .documentation-label::after {
+  content: "-";
+}
+#collective-documentation .documentation-category-sections .documentation-section .documentation-checkbox:checked + .documentation-label + .documentation-files {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  justify-content: space-between;
+}
+#collective-documentation .documentation-category-sections .documentation-section .section-number-files {
+  margin-left: auto;
+}
+#collective-documentation .documentation-category-sections .documentation-section .documentation-file {
+  width: 24%;
+  background-color: #efefef;
+  margin: 1rem 0;
+  padding: 2rem;
+}
+#collective-documentation .documentation-category-sections .documentation-section .documentation-file-title {
+  color: #000;
+  padding: 1rem 0 0.5rem 0;
+  display: inline-block;
+  border: none;
+  font-size: 1.5rem;
+}
+#collective-documentation .documentation-category-sections .documentation-section .documentation-file-description {
+  font-size: 1.2rem;
+}
+#collective-documentation .documentation-category-sections .documentation-section .documentation-file-source,
+#collective-documentation .documentation-category-sections .documentation-section .documentation-file-size,
+#collective-documentation .documentation-category-sections .documentation-section .documentation-file-creation {
+  color: #000;
+  font-size: 1rem;
+  font-weight: normal;
+  border-bottom: none;
+  margin: 0;
+}
+#collective-documentation .documentation-category-sections .documentation-section .documentation-file-download {
+  display: block;
+  background-color: #007bb1;
+  color: #fff;
+  padding: 0.2rem;
+  text-align: center;
+  border-bottom: none;
+  margin-top: 1rem;
+}
+@media (max-width: 1200px) {
+  #collective-documentation .documentation-category-sections .documentation-section .documentation-file {
+    width: 29%;
+  }
+}
+@media (max-width: 768px) {
+  #collective-documentation .documentation-category-sections .documentation-section .documentation-file {
+    width: 49%;
+  }
+}
+@media (max-width: 498px) {
+  #collective-documentation .documentation-category-sections .documentation-section .documentation-file {
+    width: 100%;
+  }
+}

@@ -1,0 +1,108 @@
+#collective-documentation{
+	.documentation-category-header{
+		background-color: #007bb1;
+		color: #fff;
+		font-weight: bold;
+		font-size: 1.5rem;
+		span{
+			padding: 0.5rem 1rem;
+			display: inline-block;
+		}
+		.category-number{
+			background-color: #5e5e5e;
+		}
+	}
+	.documentation-category-sections{
+		.documentation-section{
+			&:last-child{
+				margin-bottom: 1rem;
+			}
+			.documentation-checkbox{
+				display: none;
+				& + .documentation-label{
+					background-color: #efefef;
+					display: flex;
+					width: 100%;
+					padding: 0.5rem 1rem;
+					margin-top: 1rem;
+					max-width: none;
+					justify-content: space-between;
+					&::after{
+						padding-left: 0.5rem;
+					}
+				}
+				&:not(:checked){
+					& + .documentation-label::after{
+						content: "+";
+					}
+					& + .documentation-label + .documentation-files{
+						display: none;
+					}
+				}
+				&:checked {
+					& + .documentation-label::after{
+						content: "-";
+					}
+					& + .documentation-label + .documentation-files{
+						display: flex;
+						flex-wrap: wrap;
+						align-items: stretch;
+						justify-content: space-between;
+					}
+				}
+			}
+			.section-number-files{
+				margin-left: auto;
+			}
+			.documentation-file{
+				width: 24%;
+				background-color: #efefef;
+				margin: 1rem 0;
+				padding: 2rem;
+			}
+			.documentation-file-title{
+				color: #000;
+				padding: 1rem 0 0.5rem 0;
+				display: inline-block;
+				border: none;
+				font-size: 1.5rem;
+			}
+			.documentation-file-description {
+				font-size: 1.2rem;
+			}
+			.documentation-file-source,
+			.documentation-file-size,
+			.documentation-file-creation{
+				color: #000;
+				font-size: 1rem;
+				font-weight: normal;
+				border-bottom: none;
+				margin: 0;
+			}
+			.documentation-file-download{
+				display: block;
+				background-color: #007bb1;
+				color: #fff;
+				padding: 0.2rem;
+				text-align: center;
+				border-bottom: none;
+				margin-top: 1rem;
+			}
+		}
+	}
+}
+@media (max-width: 1200px) {
+	#collective-documentation .documentation-category-sections .documentation-section .documentation-file{
+		width: 29%;
+	}
+}
+@media (max-width: 768px) {
+	#collective-documentation .documentation-category-sections .documentation-section .documentation-file{
+		width: 49%;
+	}
+}
+@media (max-width: 498px) {
+	#collective-documentation .documentation-category-sections .documentation-section .documentation-file{
+		width: 100%;
+	}
+}
