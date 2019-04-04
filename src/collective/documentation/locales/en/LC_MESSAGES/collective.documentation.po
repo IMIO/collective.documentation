@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2019-04-04 14:43+0000\n"
+"POT-Creation-Date: 2019-04-04 15:24+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -13,6 +13,18 @@ msgstr ""
 "Language-Name: English\n"
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: DOMAIN\n"
+
+#: ../profiles/default/types/documentation_category.xml
+msgid "Documentation Category"
+msgstr ""
+
+#: ../profiles/default/types/documentation_file.xml
+msgid "Documentation File"
+msgstr ""
+
+#: ../profiles/default/types/documentation_section.xml
+msgid "Documentation Section"
+msgstr ""
 
 #: ../browser/configure.zcml:31
 msgid "Documentation view"
