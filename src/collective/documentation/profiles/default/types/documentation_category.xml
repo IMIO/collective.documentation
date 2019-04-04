@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <object name="documentation_category" meta_type="Dexterity FTI"
-   i18n:domain="plone" xmlns:i18n="http://xml.zope.org/namespaces/i18n">
+   i18n:domain="collective.documentation" xmlns:i18n="http://xml.zope.org/namespaces/i18n">
  <property name="title" i18n:translate="">Documentation Category</property>
- <property name="description" i18n:translate="">None</property>
+ <property name="description" i18n:translate=""/>
  <property name="icon_expr">string:${portal_url}/document_icon.png</property>
  <property name="factory">documentation_category</property>
  <property
