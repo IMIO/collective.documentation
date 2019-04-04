@@ -16,31 +16,31 @@ msgstr ""
 
 #: ../browser/configure.zcml:31
 msgid "Documentation view"
-msgstr ""
+msgstr "Vue documentaire"
 
 #: ../content/documentation_file.py:18
 msgid "File"
-msgstr ""
+msgstr "Fichier"
 
 #: ../configure.zcml:29
 msgid "Installs the collective.documentation add-on."
-msgstr ""
+msgstr "Installer l'addon collective.documentation"
 
 #: ../content/documentation_file.py:16
 msgid "Source"
-msgstr ""
+msgstr "Source"
 
 #: ../content/documentation_file.py:14
 msgid "Source title"
-msgstr ""
+msgstr "Nom de la source"
 
 #: ../browser/templates/documentation.pt:46
 msgid "Source:"
-msgstr ""
+msgstr "Source:"
 
 #: ../configure.zcml:38
 msgid "Uninstalls the collective.documentation add-on."
-msgstr ""
+msgstr "Désinstaller l'addon collective.documentation"
 
 #: ../configure.zcml:29
 msgid "collective.documentation"
@@ -52,8 +52,8 @@ msgstr ""
 
 #: ../browser/templates/documentation.pt:23
 msgid "documents"
-msgstr ""
+msgstr "documents"
 
 #: ../browser/templates/documentation.pt:65
 msgid "download"
-msgstr ""
+msgstr "télécharger"
