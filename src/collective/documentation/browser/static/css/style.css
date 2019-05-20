@@ -3,6 +3,7 @@
   color: #fff;
   font-weight: bold;
   font-size: 1.5rem;
+  position: relative;
 }
 #collective-documentation .documentation-category-header span {
   padding: 0.5rem 1rem;
@@ -10,6 +11,14 @@
 }
 #collective-documentation .documentation-category-header .category-number {
   background-color: #5e5e5e;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 3.5rem;
+}
+#collective-documentation .documentation-category-header .category-title {
+  text-indent: 3rem;
+  line-height: 2.5rem;
 }
 #collective-documentation .documentation-category-sections .documentation-section:last-child {
   margin-bottom: 1rem;
@@ -25,40 +34,46 @@
   margin-top: 1rem;
   max-width: none;
   justify-content: space-between;
+  align-items: center;
 }
 #collective-documentation .documentation-category-sections .documentation-section .documentation-checkbox + .documentation-label::after {
   padding-left: 0.5rem;
 }
 #collective-documentation .documentation-category-sections .documentation-section .documentation-checkbox:not(:checked) + .documentation-label::after {
   content: "+";
+  font-size: 2rem;
 }
 #collective-documentation .documentation-category-sections .documentation-section .documentation-checkbox:not(:checked) + .documentation-label + .documentation-files {
   display: none;
 }
 #collective-documentation .documentation-category-sections .documentation-section .documentation-checkbox:checked + .documentation-label::after {
   content: "-";
+  font-size: 2rem;
 }
 #collective-documentation .documentation-category-sections .documentation-section .documentation-checkbox:checked + .documentation-label + .documentation-files {
   display: flex;
   flex-wrap: wrap;
   align-items: stretch;
-  justify-content: start;
+  justify-content: space-between;
+  margin: 0 -1rem;
 }
 #collective-documentation .documentation-category-sections .documentation-section .section-number-files {
   margin-left: auto;
+  font-weight: normal;
+  white-space: nowrap;
 }
 #collective-documentation .documentation-category-sections .documentation-section .documentation-file {
-  width: 24%;
+  width: calc(50% - 2rem);
   background-color: #efefef;
-  margin: 1rem 0;
+  margin: 1rem;
   padding: 2rem;
   display: flex;
   flex-direction: column;
   justify-content: start;
-  margin-left: calc(4% / 3);
 }
-#collective-documentation .documentation-category-sections .documentation-section .documentation-file:nth-child(4n+1) {
-  margin-left: 0;
+#collective-documentation .documentation-category-sections .documentation-section .documentation-file img {
+  height: auto;
+  width: 100%;
 }
 #collective-documentation .documentation-category-sections .documentation-section .documentation-file-title {
   color: #000;
@@ -89,30 +104,6 @@
   text-align: center;
   border-bottom: none;
   margin-top: 1rem;
-}
-@media (max-width: 1200px) {
-  #collective-documentation .documentation-category-sections .documentation-section .documentation-file {
-    width: calc(100% / 3 - 1%);
-    margin-left: 1.4%;
-  }
-  #collective-documentation .documentation-category-sections .documentation-section .documentation-file:nth-child(4n+1) {
-    margin-left: 1.4%;
-  }
-  #collective-documentation .documentation-category-sections .documentation-section .documentation-file:nth-child(3n+1) {
-    margin-left: 0;
-  }
-}
-@media (max-width: 768px) {
-  #collective-documentation .documentation-category-sections .documentation-section .documentation-files {
-    justify-content: space-between;
-  }
-  #collective-documentation .documentation-category-sections .documentation-section .documentation-file {
-    width: 49%;
-    margin-left: 0 !important;
-  }
-  #collective-documentation .documentation-category-sections .documentation-section .documentation-file:nth-child(2n+2) {
-    margin-left: auto !important;
-  }
 }
 @media (max-width: 498px) {
   #collective-documentation .documentation-category-sections .documentation-section .documentation-file {

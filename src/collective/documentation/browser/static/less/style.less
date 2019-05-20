@@ -4,12 +4,21 @@
 		color: #fff;
 		font-weight: bold;
 		font-size: 1.5rem;
+		position: relative;
 		span{
 			padding: 0.5rem 1rem;
 			display: inline-block;
 		}
 		.category-number{
 			background-color: #5e5e5e;
+			position: absolute;
+			top: 0;
+			left: 0;
+			height: 3.5rem;
+		}
+		.category-title{
+			text-indent: 3rem;
+			line-height: 2.5rem;
 		}
 	}
 	.documentation-category-sections{
@@ -27,6 +36,7 @@
 					margin-top: 1rem;
 					max-width: none;
 					justify-content: space-between;
+					align-items: center;
 					&::after{
 						padding-left: 0.5rem;
 					}
@@ -34,6 +44,7 @@
 				&:not(:checked){
 					& + .documentation-label::after{
 						content: "+";
+						font-size: 2rem;
 					}
 					& + .documentation-label + .documentation-files{
 						display: none;
@@ -42,29 +53,33 @@
 				&:checked {
 					& + .documentation-label::after{
 						content: "-";
+						font-size: 2rem;
 					}
 					& + .documentation-label + .documentation-files{
 						display: flex;
 						flex-wrap: wrap;
 						align-items: stretch;
-						justify-content: start;
+						justify-content: space-between;
+						margin: 0 -1rem;
 					}
 				}
 			}
 			.section-number-files{
 				margin-left: auto;
+				font-weight: normal;
+				white-space: nowrap;
 			}
 			.documentation-file{
-				width: 24%;
+				width: calc(50% - 2rem);
 				background-color: #efefef;
-				margin: 1rem 0;
+				margin: 1rem;
 				padding: 2rem;
 				display: flex;
 				flex-direction: column;
 				justify-content: start;
-				margin-left: calc(4% / 3);
-				&:nth-child(4n+1){
-					margin-left: 0;
+				img{
+					height: auto;
+					width: 100%;
 				}
 			}
 			.documentation-file-title{
@@ -97,30 +112,6 @@
 				border-bottom: none;
 				margin-top: 1rem;
 			}
-		}
-	}
-}
-@media (max-width: 1200px) {
-	#collective-documentation .documentation-category-sections .documentation-section .documentation-file{
-		width: calc(100% / 3 - 1%);
-		margin-left: 1.4%;
-		&:nth-child(4n+1){
-			margin-left: 1.4%;
-		}
-		&:nth-child(3n+1){
-			margin-left: 0;
-		}
-	}
-}
-@media (max-width: 768px) {
-	#collective-documentation .documentation-category-sections .documentation-section .documentation-files{
-		justify-content: space-between;
-	}
-	#collective-documentation .documentation-category-sections .documentation-section .documentation-file{
-		width: 49%;
-		margin-left: 0 !important;
-		&:nth-child(2n+2){
-			margin-left: auto !important;
 		}
 	}
 }
