@@ -15,13 +15,24 @@
         </div>
         <div class="documentation-category-sections">
           <div class="documentation-section" tal:repeat="section python:view.get_sections(category)">
-            <input class="documentation-checkbox" tal:attributes="id string:checkbox-${repeat/category/index}-${repeat/section/index}" type="checkbox" name="checkbox" value="value">
-            <label class="documentation-label" alt="display files in section" tal:attributes="for string:checkbox-${repeat/category/index}-${repeat/section/index}">
+            <tal:number_file tal:define="number_file python:view.get_number_file(section)">
+            <input class="documentation-checkbox"
+                   tal:attributes="id string:checkbox-${repeat/category/index}-${repeat/section/index}" type="checkbox" name="checkbox" value="value">
+            <label class="documentation-label doc" alt="display files in section"
+                   tal:condition="number_file"
+                   tal:attributes="for string:checkbox-${repeat/category/index}-${repeat/section/index}">
               <span class="section-title" tal:content="section/Title">title_section</span>
               <span class="section-number-files">
-                <tal:number tal:content="python: view.get_number_file(section)" />
+                <tal:number tal:content="number_file" />
                 <span tal:omit-tag="" i18n:translate="">documents</span>
+              </span>
             </label>
+            <label class="documentation-label" alt="display files in section"
+                   tal:condition="not:number_file"
+                   tal:attributes="for string:checkbox-${repeat/category/index}-${repeat/section/index}">
+              <span class="section-title" tal:content="section/Title">title_section</span>
+            </label>
+            </tal:number_file>
             <div class="documentation-files">
               <tal:blockfile tal:repeat="file python:view.get_files(section)">
               <div class="documentation-file"

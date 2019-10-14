@@ -5,6 +5,9 @@ Changelog
 1.0a2 (unreleased)
 ------------------
 
+- Add condition for display number
+  [amariscal]
+
 - Adapt display documentation
   [amariscal]
 

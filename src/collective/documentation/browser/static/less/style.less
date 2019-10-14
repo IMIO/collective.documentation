@@ -42,20 +42,20 @@
 					}
 				}
 				&:not(:checked){
-					& + .documentation-label::after{
+					& + .documentation-label.doc::after{
 						content: "+";
 						font-size: 2rem;
 					}
-					& + .documentation-label + .documentation-files{
+					& + .documentation-label.doc + .documentation-files{
 						display: none;
 					}
 				}
 				&:checked {
-					& + .documentation-label::after{
+					& + .documentation-label.doc::after{
 						content: "-";
 						font-size: 2rem;
 					}
-					& + .documentation-label + .documentation-files{
+					& + .documentation-label.doc + .documentation-files{
 						display: flex;
 						flex-wrap: wrap;
 						align-items: stretch;

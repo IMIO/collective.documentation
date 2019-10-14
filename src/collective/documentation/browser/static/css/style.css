@@ -39,18 +39,18 @@
 #collective-documentation .documentation-category-sections .documentation-section .documentation-checkbox + .documentation-label::after {
   padding-left: 0.5rem;
 }
-#collective-documentation .documentation-category-sections .documentation-section .documentation-checkbox:not(:checked) + .documentation-label::after {
+#collective-documentation .documentation-category-sections .documentation-section .documentation-checkbox:not(:checked) + .documentation-label.doc::after {
   content: "+";
   font-size: 2rem;
 }
-#collective-documentation .documentation-category-sections .documentation-section .documentation-checkbox:not(:checked) + .documentation-label + .documentation-files {
+#collective-documentation .documentation-category-sections .documentation-section .documentation-checkbox:not(:checked) + .documentation-label.doc + .documentation-files {
   display: none;
 }
-#collective-documentation .documentation-category-sections .documentation-section .documentation-checkbox:checked + .documentation-label::after {
+#collective-documentation .documentation-category-sections .documentation-section .documentation-checkbox:checked + .documentation-label.doc::after {
   content: "-";
   font-size: 2rem;
 }
-#collective-documentation .documentation-category-sections .documentation-section .documentation-checkbox:checked + .documentation-label + .documentation-files {
+#collective-documentation .documentation-category-sections .documentation-section .documentation-checkbox:checked + .documentation-label.doc + .documentation-files {
   display: flex;
   flex-wrap: wrap;
   align-items: stretch;
