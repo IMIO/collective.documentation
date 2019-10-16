@@ -46,7 +46,9 @@
                    file_has_image python:file.image;
                    file_creation file/CreationDate;
                    date_format python: context.restrictedTraverse('@@plone').toLocalizedTime(file_creation);">
-                <img tal:condition="file_has_image" tal:attributes="src  string:${file_url}/@@images/image">
+                <div>
+                  <img tal:condition="file_has_image" tal:attributes="src  string:${file_url}/@@images/image">
+                </div>
                 <a href=""
                    class="documentation-file-title"
                    tal:content="file_title"

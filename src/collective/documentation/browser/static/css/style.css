@@ -63,7 +63,7 @@
   white-space: nowrap;
 }
 #collective-documentation .documentation-category-sections .documentation-section .documentation-file {
-  width: calc(50% - 2rem);
+  width: 23%;
   background-color: #efefef;
   margin: 1rem;
   padding: 2rem;
